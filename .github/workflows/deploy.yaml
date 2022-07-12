@@ -18,10 +18,10 @@ jobs:
       - run: docker build -t pdtg/multi-server ./server
       - run: docker build -t pdtg/multi-worker ./worker
       #push to docker hub
-      - run: docker push -t pdtg/multi-client
-      - run: docker push -t pdtg/multi-nginx
-      - run: docker push -t pdtg/multi-server
-      - run: docker push -t pdtg/multi-worker
+      - run: docker push pdtg/multi-client
+      - run: docker push pdtg/multi-nginx
+      - run: docker push pdtg/multi-server
+      - run: docker push pdtg/multi-worker
 
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
